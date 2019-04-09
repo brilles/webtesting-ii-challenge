@@ -1,11 +1,13 @@
 import React from 'react';
-import Display from '../Display/Display.js';
 
-export default function Dashboard() {
+export default function Dashboard({ strike, ball, foul, hit }) {
   return (
     <div className="dashboard">
-      <p>hello from dashboard</p>
-      <Display />
+      <h2>Dashboard</h2>
+      <button onClick={strike}>strike</button>
+      <button onClick={ball}>ball</button>
+      <button onClick={foul}>foul</button>
+      <button onClick={hit}>hit</button>
     </div>
   );
 }

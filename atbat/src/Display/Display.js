@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default function Display() {
+export default function Display({ ballCount, strikeCount }) {
   return (
     <div className="display">
-      <p>hello from display</p>
+      <h2>Display </h2>
+      <p>Strikes: {strikeCount}</p>
+      <p>Balls: {ballCount}</p>
     </div>
   );
 }
