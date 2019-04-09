@@ -26,6 +26,7 @@ class App extends Component {
           ball={this.ball}
           foul={this.foul}
           hit={this.hit}
+          reset={this.reset}
         />
       </div>
     );
@@ -61,6 +62,15 @@ class App extends Component {
 
   hit = () => {
     this.setState({ ballCount: 0, strikeCount: 0, hitCount: 1 });
+  };
+
+  reset = () => {
+    this.setState({
+      ballCount: 0,
+      strikeCount: 0,
+      outsCount: 0,
+      hitCount: 0
+    });
   };
 }
 
