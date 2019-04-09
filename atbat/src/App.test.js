@@ -19,6 +19,4 @@ describe('<App/>', () => {
 
     expect(queryByText(/At bat/i)).not.toBeNull();
   });
-
-  // it('changes Balls', () => {});
 });

@@ -60,4 +60,20 @@ describe('<Display /> ', () => {
 
     getByText(/Balls: 2/i);
   });
+
+  it('renders outs', () => {
+    const { getByText } = render(<Display outsCount="0" />);
+
+    getByText(/Outs: 0/i);
+  });
+  it('renders outs', () => {
+    const { getByText } = render(<Display outsCount="1" />);
+
+    getByText(/Outs: 1/i);
+  });
+  it('renders outs', () => {
+    const { getByText } = render(<Display outsCount="2" />);
+
+    getByText(/Outs: 2/i);
+  });
 });

@@ -6,7 +6,8 @@ import Display from './Display/Display.js';
 class App extends Component {
   state = {
     ballCount: 0,
-    strikeCount: 0
+    strikeCount: 0,
+    outsCount: 0
   };
 
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         <Display
           ballCount={this.state.ballCount}
           strikeCount={this.state.strikeCount}
+          outsCount={this.state.outsCount}
         />
         <Dashboard
           strike={this.strike}
@@ -28,8 +30,9 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    const { strikeCount, ballCount } = this.state;
+    const { strikeCount, ballCount, outsCount } = this.state;
     if (strikeCount === 3 || ballCount === 4) {
+      this.setState({ outsCount: outsCount + 1 });
       this.setState({ ballCount: 0, strikeCount: 0 });
     }
   }
