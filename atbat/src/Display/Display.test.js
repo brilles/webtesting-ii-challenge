@@ -61,6 +61,7 @@ describe('<Display /> ', () => {
     getByText(/Balls: 2/i);
   });
 
+  // Outs
   it('renders outs', () => {
     const { getByText } = render(<Display outsCount="0" />);
 
@@ -75,5 +76,21 @@ describe('<Display /> ', () => {
     const { getByText } = render(<Display outsCount="2" />);
 
     getByText(/Outs: 2/i);
+  });
+
+  it('renders hits', () => {
+    const { getByText } = render(<Display hitCount="0" />);
+
+    getByText(/Hits: 0/i);
+  });
+  it('renders hits', () => {
+    const { getByText } = render(<Display hitCount="1" />);
+
+    getByText(/Hits: 1/i);
+  });
+  it('renders hits', () => {
+    const { getByText } = render(<Display hitCount="2" />);
+
+    getByText(/Hits: 2/i);
   });
 });
