@@ -26,13 +26,26 @@ class App extends Component {
           ball={this.ball}
           foul={this.foul}
           hit={this.hit}
-          reset={this.reset}
         />
+        <button onClick={this.reset}>reset</button>
       </div>
     );
   }
 
-  componentDidUpdate() {
+  // componentDidUpdate() {
+  //   const { strikeCount, ballCount, outsCount } = this.state;
+  //   if (strikeCount === 3 || ballCount === 4) {
+  //     this.setState({
+  //       outsCount: outsCount + 1,
+  //       ballCount: 0,
+  //       strikeCount: 0
+  //     });
+  //   }
+  // }
+
+  strike = () => {
+    // const { strikeCount } = this.state;
+
     const { strikeCount, ballCount, outsCount } = this.state;
     if (strikeCount === 3 || ballCount === 4) {
       this.setState({
@@ -40,12 +53,9 @@ class App extends Component {
         ballCount: 0,
         strikeCount: 0
       });
+    } else {
+      this.setState({ strikeCount: strikeCount + 1 });
     }
-  }
-
-  strike = () => {
-    const { strikeCount } = this.state;
-    this.setState({ strikeCount: strikeCount + 1 });
   };
 
   ball = () => {

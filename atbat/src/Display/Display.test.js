@@ -93,15 +93,4 @@ describe('<Display /> ', () => {
 
     getByText(/Hits: 2/i);
   });
-
-  it('reset changes all values to 0', () => {
-    const { queryByText } = render(
-      <Display ballCount="0" strikeCount="0" outsCount="0" hitCount="0" />
-    );
-
-    expect(queryByText(/Strikes: 0/i)).not.toBeNull();
-    expect(queryByText(/Balls: 0/i)).not.toBeNull();
-    expect(queryByText(/Outs: 0/i)).not.toBeNull();
-    expect(queryByText(/Hits: 0/i)).not.toBeNull();
-  });
 });
